@@ -218,3 +218,97 @@ System.out.println(Arrays.deepEquals(multiArr1, multiArr2)); // true, equivalent
 ### Why It Matters
 - **Memory Efficiency**: In-place modification uses less memory but alters the original array.
 - **Functional Programming**: Creating a new array adheres to immutability principles, making code safer and easier to debug.
+
+
+<br><br>
+
+## 9. Array Methods
+Arrays are objects that have a fixed set of properties and behaviors. However, they are not full-fledged classes with many built-in methods like other collections (e.g., ArrayList). Here’s a summary of what is available:
+
+### `length` Property
+
+```java
+numbers.length
+```
+This property returns the size (number of elements) of the array. It’s important to note that length is a field, not a method, so you don’t use parentheses.
+
+### Using the `java.util.Array` Class
+
+Other than length, there are no direct methods available on arrays themselves. To perform more complex operations, you typically use utility methods from the `java.util.Arrays` class. Here are some useful static methods that work with arrays:
+
+#### Sorting
+```java
+Arrays.sort(numbers); // Sorts the array in ascending order.
+```
+
+#### Searching
+```java
+int index = Arrays.binarySearch(numbers, 3); // Performs a binary search for 3 in the sorted array and returns its index (or a negative value if not found).
+```
+
+#### Filling
+```java
+Arrays.fill(numbers, 0); // Fills the entire array with 0.
+Arrays.fill(numbers, 1, 3, 10); // Fills elements from index 1 to 3 (exclusive) with 10.
+```
+
+#### Copying
+```java
+int[] copy = Arrays.copyOf(numbers, 3); // Copies the first 3 elements into a new array.
+int[] rangeCopy = Arrays.copyOfRange(numbers, 1, 4); // Copies elements from index 1 to 4 (exclusive).
+```
+
+#### Comparing
+```java
+boolean areEqual = Arrays.equals(numbers, otherArray); // Checks if numbers and otherArray are equal.
+```
+
+#### Converting to String
+```java
+String arrayStr = Arrays.toString(numbers); // Converts the array to a string representation, e.g., “[1, 2, 3, 4, 5]”.
+```
+
+<br><br>
+## 10. ArrayList Methods
+Unlike regular arrays, `ArrayList` provides more flexibility and various built-in methods for managing elements.
+
+### Common Methods of `ArrayList`
+
+#### Adding Elements
+```java
+list.add(99); // Adds the element 99 to the end of the list.
+list.add(2, 99); // Inserts the element 99 at the specified index, 2.
+```
+
+#### Accessing Elements
+```java
+int number = list.get(0); // Retrieves the element at the specified index. 0.
+```
+
+#### Modifying Elements
+```java
+list.set(0, 99); // Replaces the element at the specified index, 0, with a new value, 99.
+```
+
+#### Removing Elements
+```java
+list.remove(2); // Removes the element at the specified index, 2.
+```
+
+#### Checking Size and Emptiness
+```java
+int size = list.size(); // Returns the number of elements in the ArrayList
+boolean empty = list.isEmpty(); // Checks if the list is empty.
+```
+
+#### Finding Elements
+```java
+int index = list.indexOf(20); // Returns the index of the first occurrence of the specified element, or `-1` if not found.
+int index = list.lastIndexOf(20); // Returns the index of the last occurrence of the specified element.
+boolean hasElement = list.contains(20); // Checks if the list contains the specified element.
+```
+
+#### Clearing the List
+```java
+list.clear(); // Removes all elements from the ArrayList
+```
